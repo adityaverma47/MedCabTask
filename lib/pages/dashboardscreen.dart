@@ -2,6 +2,8 @@ import 'package:another_carousel_pro/another_carousel_pro.dart';
 import 'package:flutter/material.dart';
 import '../model/CheckBoxList.dart';
 import '../model/CheckBoxQuestionsList.dart';
+import 'package:material_icons_named/material_icons_named.dart';
+
 
 class DashBoardScreen extends StatefulWidget {
   @override
@@ -162,13 +164,11 @@ class _StartScreen extends State<DashBoardScreen> {
                             size: 20,
                             color: Colors.black,
                           ),
-      
                           Text(" Call Employer"),
                           VerticalDivider(
                             color: Colors.grey,
                             thickness: 1,
                           ),
-      
                           Icon(Icons.chat, size: 20, color: Colors.black),
                           Text("Messages"),
                           VerticalDivider(
@@ -181,7 +181,6 @@ class _StartScreen extends State<DashBoardScreen> {
                             color: Colors.black,
                           ),
                           Text("History"),
-      
                         ],
                       ),
                     ),
@@ -315,7 +314,6 @@ class SectionFour2 extends StatefulWidget {
 }
 
 class _SectionFour2 extends State<SectionFour2> {
-  // List<bool> booleanList = [true, false, true, true, false];
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -389,7 +387,6 @@ class _SectionFour2 extends State<SectionFour2> {
     );
   }
 }
-
 class SectionMore extends StatefulWidget {
   const SectionMore({super.key});
 
@@ -433,12 +430,14 @@ class _SectionMore extends State<SectionMore> {
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 35),
-          child: Container(
-            height: 70,
-            width: 70,
-            decoration: BoxDecoration(
-              color: Colors.blueGrey,
-              borderRadius: BorderRadius.circular(180),
+          child: Expanded(
+            child: Container(
+              height: 70,
+              width: 70,
+              decoration: BoxDecoration(
+                color: Colors.blueGrey,
+                borderRadius: BorderRadius.circular(180),
+              ),
             ),
           ),
         ),
@@ -498,7 +497,7 @@ class _SectionMore extends State<SectionMore> {
                                   SizedBox(width: 3,),
                                   Text("4.5"),
                                   SizedBox(width: 2,),
-                                  Text("(1230 review)",style: TextStyle(color: Colors.grey,fontSize: 10),)
+                                  Text("(1230 review)",style: TextStyle(color: Colors.white70,fontSize: 10,),)
                                 ],
                               ),
                               Text(
@@ -522,18 +521,21 @@ class _SectionMore extends State<SectionMore> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Expanded(
-
                                     child: SizedBox(
                                       height: 30,
-                                      child: TextFormField(
-                                        decoration: InputDecoration(
-                                          focusColor: Colors.red,
-                                          border: OutlineInputBorder(
-                                            borderRadius: BorderRadius.circular(5),
-                                            borderSide: BorderSide(color: Colors.red)
-                                          ),
-                                         labelText: "Add to Cart",
+                                      child: Center(
+                                        child: TextFormField(
+                                          textAlign: TextAlign.center,
+                                          decoration: InputDecoration(
+                                            focusColor: Colors.red,
+                                            border: OutlineInputBorder(
+                                              borderRadius: BorderRadius.circular(5),
+                                              borderSide: BorderSide(color: Colors.red)
+                                            ),
 
+                                           labelText: "Add to Cart",
+
+                                          ),
                                         ),
                                       ),
                                     )
@@ -553,6 +555,14 @@ class _SectionMore extends State<SectionMore> {
 
   @override
   Widget build(BuildContext context) {
+    var arrColors = [
+      Colors.black,
+      Colors.greenAccent,
+      Colors.red,Colors.blue,
+      Colors.green,
+      Colors.amber,
+      Colors.blueGrey,
+    ];
     return Column(
       children: [
         //page2
@@ -570,7 +580,7 @@ class _SectionMore extends State<SectionMore> {
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: Container(
-            height: 100,
+            height: 180,
             decoration: BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.cover,
@@ -598,27 +608,54 @@ class _SectionMore extends State<SectionMore> {
         SizedBox(
           height: 8,
         ),
-        SingleChildScrollView(
-          child: Row(
-            children: [
-              PopularCategory(),
-              PopularCategory(),
-              PopularCategory(),
-            ],
-          ),
+        Container(
+
+    child: Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Center(
+    child: GridView.count(
+    shrinkWrap: true,
+    crossAxisCount: 3,
+    mainAxisSpacing: 15,
+    crossAxisSpacing: 10,
+    physics: NeverScrollableScrollPhysics(),
+    children: [
+    Container(
+      height: 50,
+    decoration: BoxDecoration(
+    color:arrColors[0],
+
+    borderRadius: BorderRadius.circular(180),
+    ),
+    ),
+    Container(decoration: BoxDecoration(
+    color:arrColors[1],
+    borderRadius: BorderRadius.circular(180),
+    )
+    ),
+    Container(decoration: BoxDecoration(
+    color:arrColors[2],
+    borderRadius: BorderRadius.circular(180),
+    )
+    ), Container(decoration: BoxDecoration(
+    color:arrColors[3],
+    borderRadius: BorderRadius.circular(180),
+    )
+    ), Container(decoration: BoxDecoration(
+    color:arrColors[4],
+    borderRadius: BorderRadius.circular(180),
+    )
+    ), Container(decoration: BoxDecoration(
+    color:arrColors[5],
+    borderRadius: BorderRadius.circular(180),
+    )
+    ),
+        ]
+    ),
+    ),
+    ),
         ),
-        SizedBox(
-          height: 15,
-        ),
-        SingleChildScrollView(
-          child: Row(
-            children: [
-              PopularCategory(),
-              PopularCategory(),
-              PopularCategory(),
-            ],
-          ),
-        ),
+
         SizedBox(
           height: 25,
         ),

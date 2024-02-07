@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:medcab_task/pages/dashboardscreen.dart';
 import 'package:medcab_task/pages/splashscreen.dart';
+import 'package:material_icons_named/material_icons_named.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,13 +10,11 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-
+      title: 'MedCab Task',
       home:SplashScreen(),
     );
   }
