@@ -12,14 +12,20 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMixin {
 
   late final AnimationController _controller = AnimationController(
-      duration: Duration(seconds: 3),vsync: this)..repeat();
+      duration: Duration(seconds: 1),vsync: this)..repeat();
 
   @override
+  void dispose(){
+    super.dispose();
+    _controller.dispose();
+  }
+
   void initState() {
     // TODO: implement initState
     super.initState();
 
-    Timer(Duration(seconds: 5), ()=>Navigator.push(context, MaterialPageRoute(builder:(context) => DashBoardScreen())));
+    Timer(Duration(seconds: 2), ()=>Navigator.push(context, MaterialPageRoute(builder:(context) => DashBoardScreen()))
+    );
 
   }
   @override
@@ -50,11 +56,11 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
             SizedBox(height: height * 0.09,),
             Align(
                 alignment: Alignment.center,
-                child: Text("Welcome to \n MedCab Service", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),))
+                child: Text("Welcome to \n MedCab Service", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,),textAlign: TextAlign.center,))
 
           ],
         ),
       ),
-    );;
+    );
   }
 }
