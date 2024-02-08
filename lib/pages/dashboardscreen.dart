@@ -1,7 +1,9 @@
 import 'package:another_carousel_pro/another_carousel_pro.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../model/CheckBoxList.dart';
 import '../model/CheckBoxQuestionsList.dart';
+
 import 'package:material_icons_named/material_icons_named.dart';
 
 
@@ -17,8 +19,8 @@ class _StartScreen extends State<DashBoardScreen> {
       child: Row(
         children: [
           Container(
-              height: MediaQuery.of(context).size.height*0.19,
-              width: MediaQuery.of(context).size.width*0.29,
+              height: .21.sh,
+              width: .29.sw,
               decoration: BoxDecoration(
                 color: Colors.black26,
                 borderRadius: BorderRadius.circular(8),
@@ -28,8 +30,8 @@ class _StartScreen extends State<DashBoardScreen> {
                 Expanded(
                     flex: 3,
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 1),
-                      child: Center(child: Image.asset('assets/images/amd.png',width: 90,)),
+                      padding: const EdgeInsets.only(top: 0.02),
+                      child: Center(child: Image.asset('assets/images/amd.png',width:.26.sw)),
                     )),
                 Expanded(
                   child: Padding(
@@ -68,9 +70,7 @@ class _StartScreen extends State<DashBoardScreen> {
                   Row(
                     children: [
                       Icon(Icons.arrow_back),
-                      SizedBox(
-                        width: 2,
-                      ),
+                    Padding(padding: EdgeInsets.only(left: 5)),
                       Text(
                         "Books Manpower",
                         style:
@@ -91,14 +91,14 @@ class _StartScreen extends State<DashBoardScreen> {
                         ),
                       ),
                       SizedBox(
-                        width: 5,
+                        width: .01.sw,
                       ),
                       Text(
                         "Indra Nagar Lucknow",
                         style: TextStyle(fontSize: 10, color: Colors.red),
                       ),
                       SizedBox(
-                        width: 3,
+                        width: .01.sw,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(right: 20),
@@ -127,7 +127,7 @@ class _StartScreen extends State<DashBoardScreen> {
               //page1
               children: <Widget>[
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.3,
+                  height: .3.sh,
                   child: AnotherCarousel(
                     images: [
                       Image.asset("assets/images/first.jpg"),
@@ -148,12 +148,12 @@ class _StartScreen extends State<DashBoardScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: .02.sh,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    height: 30,
+                    height: .04.sh,
                     color: Colors.white,
                     child: IntrinsicHeight(
                       child: Row(
@@ -205,36 +205,35 @@ class _StartScreen extends State<DashBoardScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 5,
+                  height: .01.sh,
                 ),
                 SingleChildScrollView(
                   child: Row(
                     children: [
                       BookManpowerCategory(),
-                      SizedBox(width: 2,),
+                      SizedBox(width: 0.01.sw,),
                       BookManpowerCategory(),
-                      SizedBox(width: 2,),
+                      SizedBox(width:.01.sw,),
                       BookManpowerCategory(),
                     ],
                   ),
                 ),
                 SizedBox(
-                  height: 8,
+                  height: .01.sw,
                 ),
                 SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
                       BookManpowerCategory(),
-                      SizedBox(width: 2,),
+                      SizedBox(width: .01.sw,),
                       BookManpowerCategory(),
-                      SizedBox(width: 2,),
+                      SizedBox(width:.01.sw,),
                       BookManpowerCategory(),
                     ],
                   ),
                 ),
                 SizedBox(
-                  height: 15,
+                  height: .01.sh,
                 ),
                 SectionMore()
                 // Add more sections as needed
@@ -290,7 +289,7 @@ class _SectionFour1 extends State<SectionFour1> {
               },
             ),
             Image(
-              width: 10,
+              width: 0.01.sw,
               image: AssetImage("assets/images/dotted_line.png"),
             ),
           ],
@@ -378,7 +377,7 @@ class _SectionFour2 extends State<SectionFour2> {
             : Container(),
         (index < questionsList.length - 1)
             ? Container(
-                height: 2,
+                height: .002.sh,
                 margin: EdgeInsets.only(left: 10, right: 10),
                 decoration: BoxDecoration(color: Color(0xffe7e7e7)),
               )
@@ -398,8 +397,6 @@ class _SectionMore extends State<SectionMore> {
   Widget SingleProducts() {
     return Container(
         margin: EdgeInsets.symmetric(horizontal: 5),
-        height: 230,
-        width: 160,
         decoration: BoxDecoration(
           color: Colors.black26,
           borderRadius: BorderRadius.circular(12),
@@ -432,8 +429,6 @@ class _SectionMore extends State<SectionMore> {
           padding: const EdgeInsets.only(left: 35),
           child: Expanded(
             child: Container(
-              height: 70,
-              width: 70,
               decoration: BoxDecoration(
                 color: Colors.blueGrey,
                 borderRadius: BorderRadius.circular(180),
@@ -465,8 +460,8 @@ class _SectionMore extends State<SectionMore> {
           Padding(
             padding: const EdgeInsets.only(left: 10),
             child: Container(
-              height: MediaQuery.of(context).size.height*0.3,
-              width: MediaQuery.of(context).size.width*0.42,
+               height: 0.3.sh,
+               width: 0.42.sw,
               decoration: BoxDecoration(
                   color: Colors.black26,
                   borderRadius: BorderRadius.circular(8)),
@@ -476,7 +471,7 @@ class _SectionMore extends State<SectionMore> {
                   Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(top: 3),
-                        child: Container(child: Image.asset('assets/images/nurse.jpg',fit: BoxFit.fitWidth,width: 140,)),
+                        child: Container(child: Image.asset('assets/images/nurse.jpg',fit: BoxFit.fitWidth,width: .39.sw,)),
                       )),
                   Expanded(
                     child: Padding(
@@ -488,15 +483,14 @@ class _SectionMore extends State<SectionMore> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-
                                   Icon(
                                     Icons.star,
                                     color: Colors.yellow,
                                     size: 10,
                                   ),
-                                  SizedBox(width: 3,),
+                                  Padding(padding: EdgeInsets.only(left: 2)),
                                   Text("4.5"),
-                                  SizedBox(width: 2,),
+                                  Padding(padding: EdgeInsets.only(left: 2)),
                                   Text("(1230 review)",style: TextStyle(color: Colors.white70,fontSize: 10,),)
                                 ],
                               ),
@@ -514,32 +508,28 @@ class _SectionMore extends State<SectionMore> {
                                     color: Colors.black,
                                     fontWeight: FontWeight.normal),
                               ),
-                              SizedBox(
-                                height: 6,
-                              ),
+                              Padding(padding: EdgeInsets.only(top: 3)),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Expanded(
-                                    child: SizedBox(
-                                      height: 30,
                                       child: Center(
-                                        child: TextFormField(
-                                          textAlign: TextAlign.center,
-                                          decoration: InputDecoration(
-                                            focusColor: Colors.red,
-                                            border: OutlineInputBorder(
-                                              borderRadius: BorderRadius.circular(5),
-                                              borderSide: BorderSide(color: Colors.red)
+                                        child: Container(
+                                          height: .08.sw,
+                                          child: TextFormField(
+                                            textAlign: TextAlign.center,
+                                            decoration: InputDecoration(
+                                              focusColor: Colors.red,
+                                              border: OutlineInputBorder(
+                                                borderRadius: BorderRadius.circular(5),
+                                                borderSide: BorderSide(color: Colors.red)
+                                              ),
+                                             labelText: "Add to Cart",
                                             ),
-
-                                           labelText: "Add to Cart",
-
                                           ),
                                         ),
                                       ),
                                     )
-                                  ),
                                 ],
                               )
                             ])),
@@ -580,7 +570,7 @@ class _SectionMore extends State<SectionMore> {
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: Container(
-            height: 180,
+            height: .5.sw,
             decoration: BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.cover,
@@ -589,12 +579,9 @@ class _SectionMore extends State<SectionMore> {
             ),
           ),
         ),
-
-        SizedBox(
-          height: 10,
-        ),
+        Padding(padding: EdgeInsets.only(bottom: 6)),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+          padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -605,13 +592,11 @@ class _SectionMore extends State<SectionMore> {
             ],
           ),
         ),
-        SizedBox(
-          height: 8,
-        ),
-        Container(
+     Padding(padding: EdgeInsets.only(bottom: 8)),
 
+        Container(
     child: Padding(
-    padding: const EdgeInsets.all(8.0),
+    padding: const EdgeInsets.all(10.0),
     child: Center(
     child: GridView.count(
     shrinkWrap: true,
@@ -621,7 +606,6 @@ class _SectionMore extends State<SectionMore> {
     physics: NeverScrollableScrollPhysics(),
     children: [
     Container(
-      height: 50,
     decoration: BoxDecoration(
     color:arrColors[0],
 
@@ -655,10 +639,7 @@ class _SectionMore extends State<SectionMore> {
     ),
     ),
         ),
-
-        SizedBox(
-          height: 25,
-        ),
+        Padding(padding: EdgeInsets.only(top: 8)),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
           child: Row(
@@ -666,34 +647,29 @@ class _SectionMore extends State<SectionMore> {
             children: [
               Text(
                 'Top Rated Manpower',
-                style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
             ],
           ),
         ),
-        SizedBox(
-          height: 15,
-        ),
+       Padding(padding: EdgeInsets.only(bottom: 12)),
         Row(
             children:[ Category3(),
-              SizedBox(width: 5,),
+              Padding(padding: EdgeInsets.only(right: 1)),
               Category3(),],
             ),
-        SizedBox(height: 10,),
+        Padding(padding: EdgeInsets.only(top: 8)),
         Row(children: [
           Category3(),
-          SizedBox(width: 5,),
+          Padding(padding: EdgeInsets.only(right: 1)),
           Category3(),
         ],),
 
-        SizedBox(
-          height: 25,
-        ),
-
+        Padding(padding: EdgeInsets.only(bottom: 10)),
         Padding(
           padding: const EdgeInsets.only(left: 15, right: 15),
           child: SizedBox(
-            height: 110,
+            height: .4.sw,
             child: Expanded(
               child: AnotherCarousel(
                 images: [
@@ -722,12 +698,12 @@ class _SectionMore extends State<SectionMore> {
           ),
         ),
         SizedBox(
-          height: 10,
+          height: .01.sh,
         ),
         // page4
         SectionFour1(),
         Container(
-          height: 5,
+          height: .01.sw,
           margin: EdgeInsets.only(left: 10, right: 10),
           decoration: BoxDecoration(color: Color(0xffe7e7e7)),
         ),
@@ -738,7 +714,7 @@ class _SectionMore extends State<SectionMore> {
         ),
         SectionFour2(),
         Container(
-          height: 6,
+          height: .01.sw,
           margin: EdgeInsets.only(left: 10, right: 10),
           decoration: BoxDecoration(color: Color(0xffe7e7e7)),
         ),
